@@ -1,0 +1,24 @@
+ <!-- ======= Services Section ======= -->
+ {% if service %}
+ <section id="services" class="services bg-dark text-light">
+    <div class="container">
+      <div class="section-title">
+        <h2 class="text-warning">Services</h2>
+        <p>
+          Offered Services: Providing Graphic Design, Motion Graphics, and Visual Solutions for Broadcasting and Virtual Reality.
+        </p>
+      </div>
+      <div class="row">
+        {% for sr in service %}
+        <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+          <div class="icon"><i class="bi bi-briefcase"></i></div>
+          <h4 class="title text-info">{{ sr.title }}</h4>
+          <p class="description">{{ sr.description }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div> 
+  </section>
+  {% endif %}
+  
+  <!-- End Services Section -->

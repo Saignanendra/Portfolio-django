@@ -1,0 +1,33 @@
+  {% if review %}
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials section-bg bg-dark text-light">
+        <div class="container">
+          <div class="section-title">
+            <h2 class="text-warning">Client Stories: What People Say</h2>
+            <p> 
+              Real thoughts from happy clients - sharing their experiences and feedback.
+            </p>
+          </div>
+      
+          <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+            <div class="swiper-wrapper" style="display: flex;">
+              {% for rv in review %}
+              <div class="swiper-slide" style="flex: 0 0 50%;">
+                <div class="testimonial-item" data-aos="fade-up">
+                  <p class="text-dark">
+                    <i class="bx bxs-quote-alt-left quote-icon-left text-info"></i>
+                    {{ rv.testimonial_text }}
+                    <i class="bx bxs-quote-alt-right quote-icon-right text-info"></i>
+                  </p>
+                  <h3 class="text-info">{{ rv.name }}</h3>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          <!-- End testimonial item -->
+          <div class="swiper-pagination"></div>
+        </div>
+    </section>
+      <!-- End  Testimonials Section -->   
+    {% endif %}  

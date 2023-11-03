@@ -1,0 +1,54 @@
+
+{% if resume %}
+    <!-- ======= Resume Section ======= -->
+    <section id="resume" class="resume bg-dark text-light">
+        <div class="container">
+         {% for re in resume %}
+          <div class="section-title">
+            <h2 class="text-warning">Resume</h2>
+            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          </div>
+  
+          <div class="row">
+            <div class="col-lg-6" data-aos="fade-up">
+              <h3 class="resume-title ">Sumary</h3>
+              <div class="resume-item pb-0">
+                <h4 class="">{{ re.full_name }}</h4>
+                <p><em>{{ re.summary }}</em></p>
+                <ul>
+                  <li>{{ re.address }}</li>
+                  <li>{{ re.phone }}</li>
+                  <li>{{ re.email }}</li>
+                </ul>
+              </div>
+            {% endfor %}
+            {% for ed in education %}
+              <h3 class="resume-title ">Education</h3>
+              <div class="resume-item">
+                <h4 class="">{{ ed.degree }}</h4>
+                <h5 class="bg-dark">{{ ed.year_start}} - {{ ed.year_end }} </h5>
+                <p><em>{{ ed.school }} , {{ ed.location }}</em></p>
+                <p>{{ ed.description }}</p>
+              </div>
+            </div>
+            {% endfor %}
+  
+            {% for ex in experience %}
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+              <h3 class="resume-title ">Professional Experience</h3>
+              <div class="resume-item">
+                <h4 class="">{{ ex.job_title }}</h4>
+                <h5 class="bg-dark">{{ ex.year_start }} - {{ ex.year_end }}</h5>
+                <p><em>{{ ex.company }}</em></p>
+                <ul>
+                  <li>{{ ex.description }}</li>             
+                </ul>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+  
+        </div>
+      </section>
+{% endif %}
+      <!-- End Resume Section -->

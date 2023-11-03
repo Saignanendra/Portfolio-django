@@ -1,0 +1,69 @@
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact bg-dark text-light">
+      <div class="container">
+
+        <div class="section-title">
+          <h2 class="text-warning">Contact Me</h2>
+          <p>
+            Let's Get in Touch - Reach Out for Any Inquiries or Collaborations.
+          </p>
+        </div>
+        {% if contact %}
+        <div class="row" data-aos="fade-in">
+          {% for ct in contact %}
+          <div class="col-lg-5 d-flex align-items-stretch">
+            <div class="info bg-dark">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4 class="text-light">Location:</h4>
+                <p>{{ ct.location }}</p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4 class="text-light">Email:</h4>
+                <p>{{ ct.email }}</p>
+              </div>
+
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4 class="text-light">Call:</h4>
+                <p>{{ ct.phone }}</p>
+              </div>
+
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.1079360274155!2d77.36048212307495!3d28.535517681678803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce522eae31eaf%3A0x754a15f6e62f6b8d!2sDelhi%2C%20India!5e0!3m2!1sen!2sus!4v1605697576226!5m2!1sen!2sus" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+
+            </div>
+          </div>
+          {% endfor %}
+          {% endif %}
+
+          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+            <form action="/" method="post" role="form" >
+              <div class="row"> {% csrf_token %}
+                <div class="form-group col-md-6">
+                  <label for="name">Your Name</label>
+                  <input type="text" name="name" class="form-control" id="name" required>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="name">Your Email</label>
+                  <input type="email" class="form-control" name="email" id="email" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="name">Subject</label>
+                <input type="text" class="form-control" name="subject" id="subject" required>
+              </div>
+              <div class="form-group">
+                <label for="name">Message</label>
+                <textarea class="form-control" name="message" rows="5" required></textarea>
+              </div>
+              <div class="text-center pt-2"><button class="btn btn-primary" type="submit">Send Message</button></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->

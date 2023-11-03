@@ -1,0 +1,41 @@
+{% if fact %}
+<!-- ======= Facts Section ======= -->
+<section id="facts" class="facts bg-dark text-light">
+    <div class="container">
+
+      <div class="section-title">
+        <h2 class="text-warning">Facts</h2>
+        <p>
+          Explore the project landscape and the tapestry of delighted clients, each an embodiment of success.
+        </p>
+      </div>
+
+
+      <!-- Start Facts FOR Loop -->
+
+      {% for ft in fact %}
+      <div class="row no-gutters">
+
+        <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up">
+          <div class="count-box">
+            <i class="bi bi-emoji-smile text-info"></i>
+            <span data-purecounter-start="0" data-purecounter-end="{{ ft.happy_clients }}" data-purecounter-duration="1" class="purecounter text-light"></span>
+            <p class=""><strong>Happy Clients</strong>"Where smiles meet satisfaction, one client at a time."</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
+          <div class="count-box">
+            <i class="bi bi-journal-richtext text-info"></i>
+            <span data-purecounter-start="0" data-purecounter-end="{{ ft.projects }}" data-purecounter-duration="1" class="purecounter text-light"></span>
+            <p class=""><strong>Projects</strong>"Transforming Visions into Vibrant Realities, One Project at a Time."</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      <!-- End Facts FOR Loop -->
+
+    </div>
+  </section>
+{% endif %}  
+  <!-- End Facts Section -->
