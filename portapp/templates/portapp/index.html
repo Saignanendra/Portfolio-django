@@ -54,6 +54,7 @@
  
 
   <main id="main">
+    {% include "portapp/about.html" %}
 
     {% if about %}
     <!-- ======= About Section ======= -->
@@ -355,7 +356,7 @@
   {% endif %}
   
   <!-- End Services Section -->
-  {  {% if review %}
+  {% if review %}
   <!-- ======= Testimonials Section ======= -->
   <section id="testimonials" class="testimonials section-bg bg-dark text-light">
       <div class="container">
