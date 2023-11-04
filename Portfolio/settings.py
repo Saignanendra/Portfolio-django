@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
 from pathlib import Path
-from decouple import config
 import boto3
 from storages.backends.s3boto3 import S3Boto3Storage
 
@@ -23,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY =  config('SECRET_KEY')
+SECRET_KEY =  "h-1&^(+t9&c40b2*dxo@m^zux@xuzfhay^zvh%mnw3is^)r288"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
