@@ -32,14 +32,15 @@ class social_media_links(models.Model):
     instagram = models.URLField(blank=True, null=True)
     linkedin = models.URLField(blank=True, null=True)
     twitter = models.URLField(blank=True, null=True)
+    github = models.URLField(blank=True, null=True)
 
     def __str__(self):
         return "Social Media Links"   
 
 class Contact(models.Model):
-    name = models.CharField(max_length=50)
-    email = models.EmailField(max_length=50)
-    subject = models.CharField(max_length=10)
+    name = models.CharField(max_length=250)
+    email = models.EmailField(max_length=250)
+    subject = models.CharField(max_length=250)
     message = models.TextField(null=True)
     time_stamp = models.DateTimeField(auto_now=True, blank=True)
       
@@ -59,7 +60,7 @@ class about(models.Model):
     age = models.IntegerField(null=True, blank=True)
     degree = models.CharField(max_length=100, blank=True)
     email = models.EmailField(max_length=100)
-    is_freelance = models.CharField(max_length=50, blank=True)
+    is_freelance = models.CharField(max_length=50, blank=True, default="available")
     time_stamp = models.DateTimeField(auto_now=True, blank=True)
     
     def __str__(self):
@@ -94,7 +95,7 @@ class Resume(models.Model):
 
     full_name = models.CharField(max_length=100,null=True, blank=True)
     summary = models.TextField(null=True, blank=True)
-    address = models.CharField(max_length=100,null=True, blank=True)
+    address = models.CharField(max_length=250,null=True, blank=True)
     phone = models.CharField(max_length=15,null=True, blank=True)
     email = models.EmailField()
     time_stamp = models.DateTimeField(auto_now=True, blank=True)
@@ -105,9 +106,9 @@ class Resume(models.Model):
     
 class Education(models.Model):
     resume = models.ForeignKey('Resume', on_delete=models.CASCADE)
-    degree = models.CharField(max_length=100,null=True, blank=True)
-    school = models.CharField(max_length=100,null=True, blank=True)
-    location = models.CharField(max_length=100,null=True, blank=True)
+    degree = models.CharField(max_length=250,null=True, blank=True)
+    school = models.CharField(max_length=250,null=True, blank=True)
+    location = models.CharField(max_length=250,null=True, blank=True)
     year_start = models.CharField(max_length=50,null=True, blank=True)
     year_end = models.CharField(max_length=50,null=True, blank=True)
     description = models.TextField(null=True, blank=True)
@@ -121,9 +122,9 @@ class Education(models.Model):
 class Experience(models.Model):
     
         resume = models.ForeignKey('Resume', on_delete=models.CASCADE)
-        job_title = models.CharField(max_length=100,null=True, blank=True)
-        company = models.CharField(max_length=100,null=True, blank=True)
-        location = models.CharField(max_length=100,null=True, blank=True)
+        job_title = models.CharField(max_length=250,null=True, blank=True)
+        company = models.CharField(max_length=250,null=True, blank=True)
+        location = models.CharField(max_length=250,null=True, blank=True)
         year_start = models.CharField(max_length=50,null=True, blank=True)
         year_end = models.CharField(max_length=50,null=True, blank=True)
         description = models.TextField(null=True, blank=True)
@@ -150,6 +151,7 @@ class PortfolioItem(models.Model):
 
     project_type = models.CharField(max_length=20, choices=PROJECT_TYPES,null=True, blank=True)
     image = models.ImageField(upload_to=upload_to_portfolio_images,null=True, blank=True)
+    video = models.FileField(upload_to=upload_to_portfolio_images,null=True, blank=True)
     time_stamp = models.DateTimeField(auto_now=True, blank=True)
 
     # You can add more fields such as a link to the project or any other relevant information.

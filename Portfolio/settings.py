@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY =  config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', cast=bool) 
+DEBUG = True
 
 
 ALLOWED_HOSTS = ["*"]
@@ -192,7 +192,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # To security for deploy
-
+'''
 SECURE_HSTS_SECONDS = 31536000  # Set the HSTS max-age to a year (adjust as needed)
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
@@ -203,3 +203,4 @@ SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True 
 
 
+'''

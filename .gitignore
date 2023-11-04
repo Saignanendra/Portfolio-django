@@ -3,6 +3,7 @@
 media
 db.sqlite3
 static
+.base
 =======
 # Byte-compiled / optimized / DLL files
 __pycache__/
