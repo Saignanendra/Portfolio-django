@@ -108,17 +108,18 @@ DATABASES = {
 '''
 DATABASES = {
     'default': {
-        'ENGINE': config('ENGINE'),
-        'NAME': config('DBNAME'),
-        'HOST': config('HOST'),
-        'USER': config('USER'),
-        'PASSWORD': config('PASSWORD'),  # Or your host name if MySQL is on a different server
-        'PORT': config('PORT'), # Default MySQL port
+        'ENGINE': "django.db.backends.mysql",
+        'NAME': "Myportfolio",
+        'HOST': "myportfolio.cd53tbtkiw3v.ap-south-1.rds.amazonaws.com",
+        'USER': "sgadmin",
+        'PASSWORD': "Sai12345#",  # Or your host name if MySQL is on a different server
+        'PORT': "3306", # Default MySQL port
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
         },  
     }
 }
+
 
 
 # Password validation
@@ -155,18 +156,19 @@ USE_TZ = True
 
 # AWS configaration 
 
-AWS_ACCESS_KEY_ID = config('AWSACCESSKEYID')
-AWS_SECRET_ACCESS_KEY = config('AWSACCESSKEY')
-AWS_STORAGE_BUCKET_NAME = config('AWSBUCKETNAME')
-AWS_S3_SIGNATURE_NAME = config('AWSS3NAME')
-AWS_S3_REGION_NAME = config('AWSREGIONNAME')
-AWS_S3_FILE_OVERWRITE = config('AWS_S3_FILE_OVERWRITE', cast=bool) 
+AWS_ACCESS_KEY_ID = "AKIAXDOEKGCL6QK5VED5"
+AWS_SECRET_ACCESS_KEY = "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"
+AWS_STORAGE_BUCKET_NAME = "myportfolio-django"
+AWS_S3_SIGNATURE_NAME = "s3v4"
+AWS_S3_REGION_NAME = "ap-south-1"
+AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
-AWS_S3_VERITY = config('AWS_S3_VERITY', cast=bool) 
+AWS_S3_VERITY = True
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
 
 
 # Static files (CSS, JavaScript, Images)
