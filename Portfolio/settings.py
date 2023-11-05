@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     # Decouple app
     'decouple',
     'storages',
+    'defender',
     
 
 ]
@@ -59,6 +60,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'defender.middleware.FailedLoginMiddleware',
 ]
 
 ROOT_URLCONF = 'Portfolio.urls'
@@ -113,11 +116,11 @@ DATABASES = {
         'USER': config('DB_USER'),
         'PASSWORD': config('DB_PASSWORD'),
         'HOST': config('DB_HOST'),
-        'PORT': config('DB_PORT', default='3306'),
-    },
+        'PORT': config('DB_PORT'),
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-        }, 
+        },
+    }
 }
 
 

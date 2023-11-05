@@ -22,6 +22,7 @@ from django.conf.urls import handler404, handler500
 from portapp.views import error_404, error_500, error_400, error_403
 
 urlpatterns = [
+    path('portfolio/defender/', include('defender.urls')),
     path('portfolio/', admin.site.urls),
     path('', include('portapp.urls')),
 ]
