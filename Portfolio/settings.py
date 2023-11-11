@@ -62,7 +62,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
     'defender.middleware.FailedLoginMiddleware',
-    'social.middleware.CustomURLMiddleware',
+    'Portfolio.middleware.CustomURLMiddleware',
 ]
 
 ROOT_URLCONF = 'Portfolio.urls'

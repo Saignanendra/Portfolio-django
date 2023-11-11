@@ -2,7 +2,8 @@
 # myapp/middleware.py
 
 from django.http import HttpResponseForbidden
-from decouple import config
+from decouple import config as Config
+
 
 class CustomURLMiddleware:
     def __init__(self, get_response):
@@ -14,7 +15,7 @@ class CustomURLMiddleware:
 
         if request.path in restricted_paths:
             # Check if the request comes from an allowed IP address
-            allowed_ips = [config("IP"),]  # Replace with your allowed IP addresses
+            allowed_ips = [Config('IP'),]  # Replace with your allowed IP addresses
 
             user_ip = request.META.get('REMOTE_ADDR')
             print(user_ip)
