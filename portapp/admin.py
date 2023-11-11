@@ -112,3 +112,43 @@ class EducationAdmin(admin.ModelAdmin):
 @admin.register(Experience)
 class ExperienceAdmin(admin.ModelAdmin):
     list_display = ('job_title', 'company', 'year_start', 'year_end')
+
+
+
+class SGAdminArea(admin.AdminSite):
+    site_header = "SG Admin Dashboard"
+    site_title = "sg admin"
+    index_title = "SG Administration"
+
+sgadmin_site = SGAdminArea(name="SGAdmin")
+
+sgadmin_site.register(Contact)
+
+
+sgadmin_site.register(social_media_links)
+
+sgadmin_site.register(about ,AboutAdmin)
+
+sgadmin_site.register(Fact ,FactAdmin)
+
+sgadmin_site.register(Skill, SkillAdmin)
+
+sgadmin_site.register(Resume, ResumeAdmin)
+
+sgadmin_site.register(Experience, ExperienceAdmin)
+
+sgadmin_site.register(Education, EducationAdmin)
+
+sgadmin_site.register(PortfolioItem, PortfolioAdmin)
+
+sgadmin_site.register(Service, ServiceAdmin)
+
+sgadmin_site.register(Testimonial, TestimonialAdmin)
+
+sgadmin_site.register(ContactInfo, ContactInfoAdmin)
+
+
+
+
+
+

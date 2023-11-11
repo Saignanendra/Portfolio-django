@@ -24,6 +24,7 @@ class User_Profile(models.Model):
 
     def __str__(self):
         return self.name
+
     
 class social_media_links(models.Model):
     
@@ -35,7 +36,12 @@ class social_media_links(models.Model):
     github = models.URLField(blank=True, null=True)
 
     def __str__(self):
-        return "Social Media Links"   
+        return " Add Social Media Links"  
+
+    class Meta:
+        verbose_name="Add Social Media links"
+        verbose_name_plural = "Add Social Media links"
+         
 
 class Contact(models.Model):
     name = models.CharField(max_length=250)
@@ -50,6 +56,10 @@ class Contact(models.Model):
                  f"{self.subject}"
                  f"({self.time_stamp:%Y-%m-%d %H:%M})"
         )
+
+    class Meta:
+        verbose_name = "Contacts from Portfolio"
+        verbose_name_plural = "Contacts from Portfolio"
 
 
 class about(models.Model):
@@ -68,6 +78,10 @@ class about(models.Model):
                  f"{self.email}"
         )
 
+    class Meta:
+        verbose_name = "About"
+        verbose_name_plural = "About"    
+
 class Fact(models.Model):
     description = models.TextField(null=True, blank=True)
     happy_clients = models.CharField(max_length=10,null=True, blank=True)
@@ -80,6 +94,9 @@ class Fact(models.Model):
         return (
                  f"{self.time_stamp}"
         )
+    class Meta:
+        verbose_name = "Fact"
+        verbose_name_plural = "Fact"    
 
 class Skill(models.Model):
     name = models.CharField(max_length=100,null=True, blank=True)
@@ -90,6 +107,9 @@ class Skill(models.Model):
         return (
                  f"{self.name}"
         )
+    class Meta:
+        verbose_name = "Skill"
+        verbose_name_plural = "write your skill"  
 
 class Resume(models.Model):
 
@@ -103,6 +123,9 @@ class Resume(models.Model):
         return (
                  f"{self.full_name}"
         ) 
+    class Meta:
+        verbose_name = "Resume"
+        verbose_name_plural = "Resume"      
     
 class Education(models.Model):
     resume = models.ForeignKey('Resume', on_delete=models.CASCADE)
@@ -116,7 +139,11 @@ class Education(models.Model):
     def __str__(self):
         return (
                 f"{self.degree}"
-        )      
+        )   
+    
+    class Meta:
+        verbose_name = "Education"
+        verbose_name_plural = "Education"     
 
 
 class Experience(models.Model):
@@ -135,6 +162,9 @@ class Experience(models.Model):
                     f"{self.job_title}"
             )      
 
+        class Meta:
+            verbose_name = "Experience"
+            verbose_name_plural = "Experience"  
 
 def upload_to_portfolio_images(instance, filename):
     # Get the project type and image name from the instance
@@ -161,6 +191,10 @@ class PortfolioItem(models.Model):
                  f"{self.project_type}"
         )  
 
+    class Meta:
+        verbose_name = "Images and Videos"
+        verbose_name_plural = "Images and Videos"  
+
 class Service(models.Model):
     title = models.CharField(max_length=100,null=True, blank=True)
     description = models.TextField(null=True, blank=True)
@@ -171,6 +205,9 @@ class Service(models.Model):
         return (
                  f"{self.title}"
         )  
+    class Meta:
+        verbose_name = "Service"
+        verbose_name_plural = "Service"  
 
 class ContactInfo(models.Model):
     location = models.CharField(max_length=100,blank=True)
@@ -182,7 +219,10 @@ class ContactInfo(models.Model):
     def __str__(self):
         return (
                  f"{self.email}"
-        )        
+        )      
+    class Meta:
+        verbose_name = "ContactInfo"
+        verbose_name_plural = "Contact-Information"    
 
 class Testimonial(models.Model):
     name = models.CharField(max_length=100,blank=True)
@@ -195,3 +235,6 @@ class Testimonial(models.Model):
         return (
                  f"{self.name}"
         ) 
+    class Meta:
+        verbose_name = "Testimonail"
+        verbose_name_plural = "Testimonail"      

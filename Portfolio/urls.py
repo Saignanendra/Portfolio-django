@@ -20,10 +20,12 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls import handler404, handler500
 from portapp.views import error_404, error_500, error_400, error_403
+from portapp.admin import sgadmin_site
 
 urlpatterns = [
     path('portfolio/defender/', include('defender.urls')),
     path('portfolio/', admin.site.urls),
+    path('sgadmin/', sgadmin_site.urls),
     path('', include('portapp.urls')),
 ]
 

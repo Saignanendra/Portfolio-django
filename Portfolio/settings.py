@@ -62,6 +62,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
     'defender.middleware.FailedLoginMiddleware',
+    'social.middleware.CustomURLMiddleware',
 ]
 
 ROOT_URLCONF = 'Portfolio.urls'
@@ -96,7 +97,7 @@ JAZZMIN_SETTINGS = {
     
     'site_brand':'SG Dashboard',
    
-}
+} 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
