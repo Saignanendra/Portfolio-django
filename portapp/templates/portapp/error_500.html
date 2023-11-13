@@ -1,37 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <style>
-        /* CSS styles for the error page */
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-        .error {
-            margin: 20% auto;
-        }
-        h1 {
-            font-size: 3em;
-        }
-        a{
-            text-decoration:none;
-            font-size:30px;
-            padding:5px;
-        }
-        a:hover{
-            color:red;
-        }
-    </style>
-</head>
-<body>
-    <div class="error">
-        <h1>500 - Internal Server Error</h1>
-        <p>Sorry, something went wrong on the server.</p>
-        <a href="/">Go back</a>
 
+
+{% extends 'portapp/error_handling.html' %}
+
+
+{% block content %}
+
+<div class="bg-dark text-light p-3 rounded">
+    <div class="error-title text-danger">500 Internal Server Error</div>
+    <div class="error-message text-light"> <b> Oops! Something went wrong on our end.</b> <br> 
+        <em> Our team has been notified, and we're working to fix the issue. Please try again later.</em>
     </div>
-</body>
-</html>
+</div>
+{% endblock %}

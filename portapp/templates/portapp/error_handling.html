@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> My Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+        
+    <!-- Favicons -->
+    <link href="{% static 'assets/img/favicon.png' %}" rel="icon"> 
+    <link href="{% static 'assets/img/sg-title-logo.png' %}" rel="sg-title-logo"> 
+   
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+    <style>
+        body {
+            background: url('') center center fixed;
+            background-size: cover;     
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .error-title {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #FF0000; /* Bootstrap Danger Color */
+        }
+
+        .error-message {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #000000; /* Bootstrap Secondary Color */
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn {
+            width: 48%;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background-color: #0368FF; /* Bootstrap Primary Color */
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3; /* Darker shade of primary color */
+            border-color: #0056b3;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d; /* Bootstrap Secondary Color */
+            border-color: #6c757d;
+        }
+
+        .btn-secondary:hover {
+            background-color: #545b62; /* Darker shade of secondary color */
+            border-color: #545b62;
+        }
+    </style>
+
+</head>
+{% if userprofile %}
+{% for user in userprofile %}
+<body style="background-image: url('{{ user.home_image.url }}');">
+{% endfor %}
+{% endif %}
+
+<div id="content">
+    {% block content %}
+
+    {% endblock %}
+</div>
+
+<!-- Bootstrap JS and dependencies (jQuery and Popper.js) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- Vendor JS Files -->
+<script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+<script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+<script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+<script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+<script src="{% static 'assets/vendor/typed.js/typed.umd.js' %}"></script>
+<script src="{% static 'assets/vendor/waypoints/noframework.waypoints.js' %}"></script>
+<script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+
+
+<script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+</html>
