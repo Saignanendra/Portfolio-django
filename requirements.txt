@@ -17,3 +17,6 @@ sqlparse==0.4.4
 typing_extensions==4.8.0
 tzdata==2023.3
 urllib3==1.26.18
+
+build-base
+mariadb-connector-c-dev
